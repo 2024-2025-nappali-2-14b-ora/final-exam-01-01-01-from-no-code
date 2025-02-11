@@ -19,7 +19,7 @@
             <view:StudentView />
         </DataTemplate>
     </Window.Resources>
-    <Grid>
+    <StackPanel>
         <DockPanel>
             <Menu>
                 <MenuItem Header="Főmenüpont">
@@ -30,5 +30,5 @@
             </Menu>
         </DockPanel>
         <ContentControl Content="{Binding CurrentView}" />
-    </Grid>
+    </StackPanel>
 </Window>
