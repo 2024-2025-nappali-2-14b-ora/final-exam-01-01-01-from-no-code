@@ -8,6 +8,9 @@
         xmlns:local="clr-namespace:KretaProject"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+    <Window.DataContext>
+        <viewModel:MainViewModel />
+    </Window.DataContext>
     <Grid>
         <DockPanel>
             <Menu>

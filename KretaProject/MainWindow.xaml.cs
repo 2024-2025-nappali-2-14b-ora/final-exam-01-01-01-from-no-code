@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using KretaProject.ViewModels;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -18,6 +19,7 @@ namespace KretaProject
     {
         public MainWindow()
         {
+            //DataContext = new MainViewModel();
             InitializeComponent();
         }
     }
