@@ -1,6 +1,8 @@
-﻿namespace KretaProject.ViewModels
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+
+namespace KretaProject.ViewModels
 {
-    public class MainViewModel
+    public partial class MainViewModel : ObservableObject
     {
     }
 }
