@@ -7,6 +7,14 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-
+        <DockPanel>
+            <Menu>
+                <MenuItem Header="Főmenüpont">
+                    <MenuItem Header="Vezérlőpult"></MenuItem>
+                    <MenuItem Header="Diákok"></MenuItem>
+                    <MenuItem Header="Osztályok"></MenuItem>
+                </MenuItem>
+            </Menu>
+        </DockPanel>
     </Grid>
 </Window>
