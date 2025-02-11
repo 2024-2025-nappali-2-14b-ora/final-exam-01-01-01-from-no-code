@@ -11,15 +11,24 @@
     <Window.DataContext>
         <viewModel:MainViewModel />
     </Window.DataContext>
+    <Window.Resources>
+        <DataTemplate DataType="{x:Type viewModel:ControlPanelViewModel}">
+            <view:ControlPanelView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModel:StudentViewModel}">
+            <view:StudentView />
+        </DataTemplate>
+    </Window.Resources>
     <Grid>
         <DockPanel>
             <Menu>
                 <MenuItem Header="Főmenüpont">
                     <MenuItem Header="Vezérlőpult"></MenuItem>
-                    <MenuItem Header="Diákok"></MenuItem>
+                    <MenuItem Header="Diákok" Command="{Binding ShowStudentViewCommand}"></MenuItem>
                     <MenuItem Header="Osztályok"></MenuItem>
                 </MenuItem>
             </Menu>
         </DockPanel>
+        <ContentControl Content="{Binding CurrentView}" />
     </Grid>
 </Window>
