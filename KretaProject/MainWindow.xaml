@@ -3,10 +3,32 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:view="clr-namespace:KretaProject.Views"
+        xmlns:viewModel="clr-namespace:KretaProject.ViewModels"
         xmlns:local="clr-namespace:KretaProject"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-
-    </Grid>
+    <Window.DataContext>
+        <viewModel:MainViewModel />
+    </Window.DataContext>
+    <Window.Resources>
+        <DataTemplate DataType="{x:Type viewModel:ControlPanelViewModel}">
+            <view:ControlPanelView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModel:StudentViewModel}">
+            <view:StudentView />
+        </DataTemplate>
+    </Window.Resources>
+    <StackPanel>
+        <DockPanel>
+            <Menu>
+                <MenuItem Header="Főmenüpont">
+                    <MenuItem Header="Vezérlőpult"></MenuItem>
+                    <MenuItem Header="Diákok" Command="{Binding ShowStudentViewCommand}"></MenuItem>
+                    <MenuItem Header="Osztályok"></MenuItem>
+                </MenuItem>
+            </Menu>
+        </DockPanel>
+        <ContentControl Content="{Binding CurrentView}" />
+    </StackPanel>
 </Window>
